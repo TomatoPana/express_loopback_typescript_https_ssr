@@ -1,4 +1,6 @@
 {
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "extends": "@loopback/build/config/tsconfig.common.json",
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -17,7 +19,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "outDir": "dist",
+    "rootDir": "src"
   },
   "include": [
     "src"

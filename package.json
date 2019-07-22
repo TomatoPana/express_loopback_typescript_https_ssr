@@ -1,9 +1,45 @@
 {
   "name": "express_loopback_typescript_https_ssr",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "private": true,
   "description": "A full solution for high-end PWA with Loopback, Express, Server Side Rendering with React and Typescript",
   "main": "index.js",
+  "engines": {
+    "node": ">=8.9"
+  },
+  "scripts": {
+    "start:react": "react-scripts start",
+    "build:react": "react-scripts build",
+    "test:react": "react-scripts test",
+    "eject": "react-scripts eject",
+
+    "build:server": "lb-tsc",
+    "build:watch": "lb-tsc --watch",
+    "clean": "lb-clean dist *.tsbuildinfo",
+    "lint": "npm run prettier:check && npm run eslint",
+    "lint:fix": "npm run eslint:fix && npm run prettier:fix",
+    "prettier:cli": "lb-prettier \"**/*.ts\" \"**/*.js\"",
+    "prettier:check": "npm run prettier:cli -- -l",
+    "prettier:fix": "npm run prettier:cli -- --write",
+    "eslint": "lb-eslint --report-unused-disable-directives .",
+    "eslint:fix": "npm run eslint -- --fix",
+    "pretest": "npm run clean && npm run build",
+    "test:server": "lb-mocha --allow-console-logs \"dist/__tests__\"",
+    "posttest": "npm run lint",
+    "test:dev": "lb-mocha --allow-console-logs dist/__tests__/**/*.js && npm run posttest",
+    "migrate": "node ./dist/migrate",
+    "prestart": "npm run build",
+    "start:server": "node -r source-map-support/register .",
+    "prepublishOnly": "npm run test"
+  },
+  "files": [
+    "README.md",
+    "index.js",
+    "index.d.ts",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
   "dependencies": {
     "@types/jest": "24.0.15",
     "@types/node": "12.6.8",
@@ -12,13 +48,28 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
-    "typescript": "3.5.3"
+    "@loopback/boot": "^1.4.4",
+    "@loopback/context": "^1.20.2",
+    "@loopback/core": "^1.8.5",
+    "@loopback/openapi-v3": "^1.7.0",
+    "@loopback/repository": "^1.8.2",
+    "@loopback/rest": "^1.16.3",
+    "@loopback/rest-explorer": "^1.2.5",
+    "@loopback/service-proxy": "^1.2.5"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "@loopback/build": "^2.0.3",
+    "source-map-support": "^0.5.12",
+    "@loopback/testlab": "^1.6.3",
+    "@types/node": "^10.14.10",
+    "@typescript-eslint/parser": "^1.11.0",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@loopback/eslint-config": "^2.0.0",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-eslint-plugin": "^2.1.0",
+    "eslint-plugin-mocha": "^5.3.0",
+    "typescript": "^3.5.3"
   },
   "eslintConfig": {
     "extends": "react-app"
