@@ -1,6 +1,6 @@
 {
   "name": "express_loopback_typescript_https_ssr",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "description": "A full solution for high-end PWA with Loopback, Express, Server Side Rendering with React and Typescript",
   "main": "index.js",
@@ -12,7 +12,6 @@
     "build:react": "react-scripts build",
     "test:react": "react-scripts test",
     "eject": "react-scripts eject",
-
     "build:server": "lb-tsc",
     "build:watch": "lb-tsc --watch",
     "clean": "lb-clean dist *.tsbuildinfo",
@@ -41,10 +40,6 @@
     "!*/__tests__"
   ],
   "dependencies": {
-    "@types/jest": "24.0.15",
-    "@types/node": "12.6.8",
-    "@types/react": "16.8.23",
-    "@types/react-dom": "16.8.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
@@ -58,10 +53,13 @@
     "@loopback/service-proxy": "^1.2.5"
   },
   "devDependencies": {
+    "@types/jest": "24.0.15",
+    "@types/node": "^12.6.8",
+    "@types/react": "16.8.23",
+    "@types/react-dom": "16.8.4",
     "@loopback/build": "^2.0.3",
     "source-map-support": "^0.5.12",
     "@loopback/testlab": "^1.6.3",
-    "@types/node": "^10.14.10",
     "@typescript-eslint/parser": "^1.11.0",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@loopback/eslint-config": "^2.0.0",
