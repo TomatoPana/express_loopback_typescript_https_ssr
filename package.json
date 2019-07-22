@@ -1,0 +1,26 @@
+{
+  "name": "express_loopback_typescript_https_ssr",
+  "version": "0.0.1",
+  "description": "A full solution for high-end PWA with Loopback, Express, Server Side Rendering with React and Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomatoPana/express_loopback_typescript_https_ssr.git"
+  },
+  "keywords": [
+    "Express",
+    "Loopback",
+    "Typescript",
+    "SSR",
+    "React"
+  ],
+  "author": "Moises Lozano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TomatoPana/express_loopback_typescript_https_ssr/issues"
+  },
+  "homepage": "https://github.com/TomatoPana/express_loopback_typescript_https_ssr#readme"
+}
